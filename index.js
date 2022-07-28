@@ -20,17 +20,17 @@ async function run() {
 
         // get all product 
         app.get('/info', async (req, res) => {
-            const query = {}
-            const cursor = infoCollection.find(query)
-            const result = await cursor.toArray()
-            res.send(result)
+            const query = {};
+            const cursor = infoCollection.find(query);
+            const result = await cursor.toArray();
+            res.send(result);
         });
 
         // add products 
         app.post('/product', async (req, res) => {
-            const newProduct = req.body
-            const result = await infoCollection.insertOne(newProduct)
-            res.send(result)
+            const newProduct = req.body;
+            const result = await infoCollection.insertOne(newProduct);
+            res.send(result);
         })
 
     }
